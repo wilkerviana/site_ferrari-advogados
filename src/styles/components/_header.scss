@@ -1,0 +1,103 @@
+.foo-header{
+  background: $light;
+  &.is-fixed{
+    @media (min-width:960px) {
+      box-shadow: 0 1px 10px 1px #ccc;
+      position: fixed;
+      width: 100%;
+      z-index: 3;
+    }
+  }
+  & .container header{
+    padding: .2rem 0;
+    @media (min-width:960px) {
+      display: flex;
+    }
+    & .brand {
+      margin: 0 auto 1rem;
+      width: 157px;
+      @media (min-width:960px){
+        margin: 0;
+      }
+    }
+    & .navegation-menu {
+      height: 0;
+      position: relative;
+      visibility: hidden;
+      width: 100%;
+      &.menu-open{
+        height: 100%;
+        padding: 1rem 0;
+        visibility: visible;
+        & ul .option{
+          opacity: 1;
+        }
+      }
+      @media (min-width:960px){
+        height: 100%;
+        margin-left: 5rem;
+        max-width: 620px;
+        padding: 2rem 0;
+        visibility: visible;
+      }
+      & .menu {
+        max-width: 560px;
+        @media (min-width:960px){
+          float: right;
+        }
+        & .option {
+          display: block;
+          margin: .4rem .9rem;
+          opacity: 0;
+          transition: opacity 1s ease-in;
+          @media (min-width:960px){
+            display: inline-block;
+            margin: 0 .9rem;
+            opacity: 1;
+          }
+          &:first-child{
+            @media (min-width:960px){
+              margin-left: 0;
+            }
+          }
+          & .link-menu {
+            color: $light-wine;
+            font-size: .9rem;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+            &:hover {
+              color: $dark;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+    & .menu-social {
+      margin: 0 auto;
+      max-width: 200px;
+      padding: 2rem 3rem;
+      @media (min-width:960px){
+        margin: 0;
+      }
+      & li{
+        display: inline-block;
+        margin: 0 .3rem;
+      }
+    }
+  }
+}
+.btn-menu-mobile{
+  background: none;
+  color: $light-wine;
+  display: block;
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0 auto;
+  outline: none;
+  width: 100px;
+  @media (min-width:960px) {
+    display: none;
+  }
+}

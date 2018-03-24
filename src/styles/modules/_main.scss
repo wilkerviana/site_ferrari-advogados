@@ -1,0 +1,279 @@
+.foo-main {
+  margin: 2rem auto;
+}
+.title-main {
+  color: $light-wine;
+  font-family: 'BookmanBold',serif;
+  font-size: 2.5rem;
+  line-height: 2.2rem;
+  margin: 1.2em auto 0;
+  max-width: 760px;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  @media (min-width:960px) {
+    line-height: 1.6rem;
+  }
+  &:before,
+  &:after {
+    display: none;
+    @media (min-width:960px){
+      background: $light-wine;
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: 25%;
+      height: 4px;
+      width: 100px;
+    }
+  }
+  &:before {
+    left: -15%;
+  }
+  &:after {
+    right: -12%;
+  }
+  & span {
+    font-family: 'Lato',sans-serif;
+    font-size: .8rem;
+    font-weight: lighter;
+    text-transform: uppercase;
+    @media (min-width:960px){
+      font-size: .8rem;
+    }
+  }
+}
+
+.module {
+  margin: 3rem auto;
+}
+
+.history {
+  margin: inherit auto;
+  max-width: 980px;
+  text-align: center;
+  & .subtitle{
+    color: $light-wine;
+    font-family: 'BookmanBold',serif;
+    font-size: 1.8em;
+  }
+  & .text {
+    margin: 0 auto 1rem;
+  }
+  & .link-module {
+    color: $dark;
+    font-weight: bold;
+  }
+}
+
+.team {
+  margin: inherit auto;
+  text-align: center;
+  & .subtitle{
+    color: $light-wine;
+    font-family: 'BookmanBold',serif;
+    font-size: 1.8em;
+  }
+  & .text {
+    max-width: 800px;
+    margin: 0 auto 1rem;
+  }
+  & .items-team {
+    display: inline-block;
+    margin: 2rem .2rem;
+    text-align: left;
+    & picture {
+      display: block;
+      position: relative;
+      &:after {
+        background: $dark;
+        content: '';
+        opacity: .4;
+        position: absolute;
+        top: 0;
+        transition: opacity .3s ease-in;
+        left: 0;
+        height: 99%;
+        width: 100%;
+      }
+      &:hover {
+        cursor: pointer;
+        &:after {
+          opacity: 0;
+        }
+      }
+    }
+  }
+  & .link-module {
+    color: $light-wine;
+    display: block;
+    font-family: 'BookmanBold',serif;
+  }
+}
+
+.area {
+  text-align: center;
+  & .subtitle{
+    clear: both;
+    color: $light-wine;
+    font-family: 'BookmanBold',serif;
+    font-size: 1.8em;
+  }
+  & .text {
+    max-width: 800px;
+    margin: 0 auto 1rem;
+  }
+  & .link-module {
+    color: $dark;
+    clear: both;
+    display: block;
+  }
+}
+.skills {
+  margin: 2rem 0;
+  padding: 0 2rem;
+  width: 100%;
+  @media (min-width:960px){
+    float: left;
+    width: 50%;
+  }
+}
+
+.newsletter {
+  background: $light-wine;
+  display: block;
+  clear: both;
+  padding: 1rem 0;
+  width: 100%;
+  & .container {
+    display: block;
+    @media (min-width:960px){
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    & .title {
+      color: $light;
+      font-size: 1.2rem;
+    }
+    & form{
+      display: block;
+      @media (min-width:960px){
+        display: flex;
+      }
+      & .btn {
+        background: $dark-wine;
+        border-radius: 5px;
+        color: $light;
+        display: block;
+        font-size: 1rem;
+        padding: .5rem 1rem;
+        margin: 0 auto;
+        width: 100px;
+        @media (min-width:960px){
+          display: inline-block;
+          margin: 0;
+        }
+      }
+    }
+    & form fieldset{
+      display: inline-block;
+      margin: 1rem 0;
+      position: relative;
+      width: 260px;
+      @media (min-width:960px){
+        margin: 0 1rem;
+      }
+      & input {
+        border-radius: 5px;
+        font-size: .9rem;
+        padding: .6rem;
+        width: 100%;
+        & + label {
+          color: #ccc;
+          font-weight: normal;
+          position: absolute;
+          top: .5rem;
+          left: .5rem;
+        }
+      }
+    }
+  }
+}
+
+.contact {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 90%;
+  @media (min-width:960px){
+    width: 640px;
+  }
+  & .title {
+    color: $light-wine;
+    font-family:'BookmanRegular',serif;
+  }
+  & .subtitle {
+    font-weight: normal;
+  }
+  & form {
+    margin: 1.5rem auto;
+    text-align: left;
+    & fieldset:nth-child(1) , & fieldset:nth-child(2) {
+      display: block;
+      margin: 1.1rem 0;
+      width: 100%;
+      @media (min-width:960px){
+        display: inline-block;
+        margin: 1.1rem;
+        width: 300px;
+      }
+    }
+    & fieldset:nth-child(1) {
+      margin-left: 0;
+    }
+    & fieldset:nth-child(2) {
+      margin-right: 0;
+    }
+    & input {
+      background: $gray;
+      border: none;
+      display: block;
+      padding: 1rem;
+      width: 100%;
+    }
+    & label {
+      color: #8b816b;
+      font-weight: normal;
+      margin: .4rem 0;
+    }
+    & textarea {
+      background: $gray;
+      border: none;
+      display: block;
+      resize: none;
+      height: 200px;
+      width: 100%;
+      @media (min-width:960px){
+        max-width: 640px;
+      }
+    }
+    & .btn {
+      background: $gray;
+      margin: 1rem .4rem;
+      padding: .8rem 1.4rem;
+      @media (min-width:960px){
+        display: inline;
+        margin: 2rem 1rem;
+      }
+      &.btn-submit {
+        background: $light-wine;
+        color: $light;
+      }
+    }
+  }
+}
+
+.inside-main-img {
+  margin-top: 1rem;
+  width: 100%;
+}

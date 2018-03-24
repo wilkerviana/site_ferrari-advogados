@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+fieldset , button, input {
+  border: none;
+}
+
+body {
+  background: white;
+  font-family: 'Lato',sans-serif;
+  font-size: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1136px;
+  width: 90%;
+}

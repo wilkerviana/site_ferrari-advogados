@@ -1,4 +1,3 @@
-"use strict";
 
 var gulp      = require('gulp'),
     style     = require('gulp-sass'),
@@ -19,7 +18,7 @@ gulp.task('bs', function(){
     }
   });
 
-  gulp.start(['images', 'script', 'style', 'view']);
+  gulp.start(['images', 'script', 'fonts', 'style', 'view']);
 
   gulp.watch('src/**/*.js', ['script']);
   gulp.watch('src/**/*.scss', ['style']);
@@ -35,24 +34,28 @@ gulp.task('style',() => {
       .pipe(sourcemap.init())
       .pipe(plumber({
         handleError: function(error){
-          console.log(error);
           this.emit('end');
+          console.log(error);
         }
       }))
-      // .pipe(styleglob())
       .pipe(style())
       .pipe(prefixer({
         browsers: ['last 2 versions'],
         cascade: false
       }))
       .pipe(sourcemap.write('.'))
-      .pipe(gulp.dest('dist/css/style.css'));
+      .pipe(gulp.dest('dist/css/'));
 });
 
 gulp.task('view', () => {
   gulp.src('src/*.html')
       .pipe(template())
       .pipe(gulp.dest('dist'))
+});
+
+gulp.task('fonts', () => {
+  gulp.src('src/fonts/*')
+    .pipe(gulp.dest('dist/fonts'))
 });
 
 gulp.task('images',() => {

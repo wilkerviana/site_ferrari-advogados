@@ -1,0 +1,44 @@
+.accordion {
+  margin: 2rem 0;
+  max-height: 2.6rem;
+  transition: max-height .4s linear;
+  & .head-accordion {
+    border-bottom: 2px solid $dark;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: .5em 0;
+    & .title {
+      font-family: 'BookmanBold',sans-serif;
+    }
+    & .btn-accordion {
+      background: $light;
+      border: 1px solid $light-wine;
+      border-radius: 50%;
+      color: $light-wine;
+      font-size: 1em;
+      height: 22px;
+      outline: none;
+      padding: 0 .3em .1em;
+      width: 22px;
+    }
+  }
+  & .body-accordion {
+    padding: 1rem 0;
+    opacity: 0;
+    transition: opacity .4s ease-in;
+    transition-delay: .2s;
+    visibility: hidden;
+  }
+  &.is-open {
+    max-height: 100%;
+    @media (min-width:960px) {
+      max-height: 25rem;
+      margin: 1rem 0;
+    }
+    & .body-accordion {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
