@@ -75,7 +75,7 @@
         <p class="text">
           O escritório Ferrari & Ferrari Advogados, fundado em 2006, adveio de uma ideologia posta em prática e há muito tempo almejada pelos sócios fundadores, Dr. Fabrício Ferrari e Dra. Raquel Marcos Ferrari, que destemidamente uniram experiência, respeito, agilidade e efetividade, objetivando prestação de serviços advocatícios de qualidade aos clientes que almejam parceria, confiança e um trabalho diferenciado.
         </p>
-        <a class="link-module" href="#">Saiba mais >></a>
+        <a class="link-module" href="historia.php">Saiba mais >></a>
       </section>
       <section class="module team">
         <h2 class="subtitle">
@@ -89,26 +89,44 @@
             <img src="images/picture-team.jpg" alt="">
           </picture>
           <span>Raquel Marcos Ferrari</span>
+          <div class="description">
+            <p>Advogada, inscrita na Ordem dos Advogados do Brasil/SP sob o n. 261.144.</p>
+            <a href="equipe.php" title="Saiba mais">Saiba mais >></a>
+          </div>
         </article>
         <article class="items-team">
           <picture>
             <img src="images/picture-team.jpg" alt="">
           </picture>
           <span>Rita de Cássio Ribeiro</span>
+          <div class="description">
+            <p>Advogada, inscrita na Ordem dos Advogados do Brasil/SP sob n. 318.163; </p>
+            <a href="equipe.php" title="Saiba mais">Saiba mais >></a>
+          </div>
         </article>
         <article class="items-team">
           <picture>
             <img src="images/picture-team.jpg" alt="">
           </picture>
           <span>Juliana Laguardia Frisene</span>
+          <div class="description">
+            <p>Advogada, inscrita na Ordem dos Advogados do Brasil/SP 
+                n. 344.259;</p>
+            <a href="equipe.php" title="Saiba mais">Saiba mais >></a>
+          </div>
         </article>
         <article class="items-team">
           <picture>
             <img src="images/picture-team.jpg" alt="">
           </picture>
           <span>Luiz Fernando de Andrade</span>
+          <div class="description">
+            <p>Advogado, inscrito na Ordem dos Advogados do Brasil/SP
+                n. 392.605;</p>
+            <a href="equipe.php" title="Saiba mais">Saiba mais >></a>
+          </div>
         </article>
-        <a class="link-module" href="#">Conheça mais da equipe >></a>
+        <a class="link-module" href="equipe.php">Conheça mais da equipe >></a>
       </section>
       <section class="module area">
         <div class="skills">
@@ -131,7 +149,7 @@
           pelos sócios e banca de advogados, permitindo atendimento completo tornando desnecessária a
           procura de outros profissionais no mercado da advocacia.
         </p>
-        <a class="link-module" href="#">Conheça algumas especialidades>></a>
+        <a class="link-module" href="atuacao.php">Conheça algumas especialidades>></a>
       </section>
       <section id="newsletter" class="module newsletter">
         <div class="container">
@@ -159,23 +177,23 @@
           Contato
         </h2>
         <h3 class="subtitle">Por favor utilize o formulário abaixo<br>para <strong>entrar em contato</strong></h3>
-        <form action="" method="POST">
+        <form action="contato.php" method="POST">
           <fieldset>
-            <label for="">Nome:</label>
-            <input type="text">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" required>
           </fieldset>
           <fieldset>
-            <label for="">E-mail:</label>
-            <input type="text">
+            <label for="email">E-mail:</label>
+            <input type="email" name="email" required>
           </fieldset>
           <fieldset>
-            <label for="">Mensagem:</label>
-            <textarea name="" id="">
+            <label for="mensagem">Mensagem:</label>
+            <textarea name="mensagem" required>
 
             </textarea>
           </fieldset>
-          <button class="btn" type="button">Cancelar</button>
-          <button class="btn btn-submit" type="submit">Enviar Mensagem</button>
+          <!-- <button class="btn" type="button">Cancelar</button> -->
+          <button class="btn btn-submit" name="send" type="submit">Enviar Mensagem</button>
         </form>
       </section>
     </div>

@@ -3,6 +3,10 @@ var gulp      = require('gulp'),
     style     = require('gulp-sass'),
     plumber   = require('gulp-plumber'),
     imagemin  = require('gulp-imagemin'),
+    concat    = require('gulp-concat'),
+    minify    = require('gulp-minify'),
+    rename    = require('gulp-rename'),
+    cleanCss    = require('gulp-clean-css'),
     prefixer  = require('gulp-autoprefixer'),
     sourcemap = require('gulp-sourcemaps'),
     styleglob = require('gulp-sass-glob'),
@@ -74,6 +78,28 @@ gulp.task('script',() => {
       .pipe(gulp.dest('dist/js'));
 });
 
+gulp.task('bundlejs',() => {
+  gulp.src('src/scripts/*.js')
+      .pipe(concat('main.js'))
+      .pipe(minify())
+      .pipe(gulp.dest('build/js'))
+});
+
+gulp.task('bundlecss',() => {
+  gulp.src('dist/css/style.css')
+      .pipe(cleanCss())
+      .pipe(gulp.dest('build/css'))
+});
+
+gulp.task('rename',() => {
+  gulp.src('src/*.html')
+      .pipe(rename({
+        extname: ".php"
+      }))
+      .pipe(gulp.dest('build/'))
+});
+
 
 // default task with BrowserSync
 gulp.task('default',['bs']);
+gulp.task('build',['bundlejs','bundlecss','rename','images']);

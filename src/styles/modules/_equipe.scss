@@ -1,0 +1,51 @@
+.wrapper-main {
+  & .head-main.equipe {
+    background: url(../images/backgrounds/bg_equipe.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+.main-team {
+  margin: 6rem auto 2rem;
+  & .title {
+    color: $light-wine;
+    font-family: 'BookmanBold',sans-serif;
+    font-size: 1.6em;
+    text-align: center;
+  }
+  & .item-team {
+    border-bottom: 2px solid $dark;
+    margin: 2rem 0;
+    padding-bottom: 2rem;
+    @media (min-width:960px) {
+      display: flex;
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+    & picture img {
+      margin: 1rem 0;
+      width: 100%;
+      @media (min-width: 960px) {
+        margin: 0;
+        min-width: 200px;
+      }
+    }
+    & .item-description {
+      margin: 0 1rem;
+      & .title {
+        color: $dark;
+        font-size: 1.2em;
+        text-align: left;
+        & span {
+          font-family: 'BookmanRegular';
+          font-size: .9em;
+        }
+      }
+      & p {
+        line-height: 1.425em;
+        margin: 1rem 0;
+      }
+    }
+  }
+}

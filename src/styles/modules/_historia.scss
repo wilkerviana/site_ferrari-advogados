@@ -1,9 +1,6 @@
-.main-quem-somos {
+.wrapper-main {
   position: relative;
   & .head-main {
-    background: url(../images/backgrounds/bg_historia.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
     color: $light;
     height: 200px;
     padding: 2rem;
@@ -11,6 +8,11 @@
     @media (min-width:960px){
       height: 400px;
       padding: 4rem 5rem;
+    }
+    &.historia {
+      background: url(../images/backgrounds/bg_historia.jpg) no-repeat;
+      background-size: cover;
+      background-position: center;
     }
     & .title {
       font-family: 'BookmanBold',sans-serif;

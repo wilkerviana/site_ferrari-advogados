@@ -82,6 +82,7 @@
     display: inline-block;
     margin: 2rem .2rem;
     text-align: left;
+    vertical-align: top;
     & picture {
       display: block;
       position: relative;
@@ -102,6 +103,38 @@
           opacity: 0;
         }
       }
+    }
+    & span {
+      font-family: 'BookmanBold',sans-serif;
+      font-size: .825em;
+    }
+    & .description {
+      @media (min-width: 960px) {
+        max-height: 0;
+        opacity: 0;
+        transition: max-height .4s ease-in;
+        transition: opacity .7s ease-in-out;
+        transition-delay: .3s;
+        visibility: hidden;
+      }
+      & p , & a {
+        margin: .7em 0;
+        max-width: 190px;
+      }
+      & a {
+        color: $light-wine;
+        display: inline;
+        font-family: 'BookmanBold',sans-serif;
+        text-decoration: none;
+      }
+    }
+    & picture:hover ~ span {
+      color: $light-wine;
+    }
+    & picture:hover ~ .description {
+      max-height: 8rem;
+      opacity: 1;
+      visibility: visible;
     }
   }
   & .link-module {
@@ -249,7 +282,6 @@
     & textarea {
       background: $gray;
       border: none;
-      display: block;
       resize: none;
       height: 200px;
       width: 100%;
@@ -259,11 +291,13 @@
     }
     & .btn {
       background: $gray;
+      cursor: pointer;
       margin: 1rem .4rem;
       padding: .8rem 1.4rem;
       @media (min-width:960px){
-        display: inline;
-        margin: 2rem 1rem;
+        display: block;
+        margin: 1rem auto;
+        text-align: center;
       }
       &.btn-submit {
         background: $light-wine;
