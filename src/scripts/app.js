@@ -1,7 +1,11 @@
 'use strict';
 
 $('.carousel').slick({
-  dots: true
+  dots: true,
+  speed: 500,
+  autoplay: true,
+  autoplaySpeed: 4000,
+  infinite: true
 });
 
 $('.input-newsletter').focus(function(){
