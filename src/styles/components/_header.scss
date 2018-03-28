@@ -4,18 +4,26 @@
     @media (min-width:960px) {
       box-shadow: 0 1px 10px 1px #ccc;
       position: fixed;
+      top: 0;
       width: 100%;
       z-index: 3;
     }
+  }
+  &.is-fixed ~ #main-wrapper{
+    padding-top: 180px;
   }
   & .container header{
     padding: .2rem 0;
     @media (min-width:960px) {
       display: flex;
+      align-items: center;
     }
     & .brand {
       margin: 0 auto 1rem;
       width: 157px;
+      & img {
+        max-height: 82px;
+      }
       @media (min-width:960px){
         margin: 0;
       }
@@ -35,7 +43,7 @@
       }
       @media (min-width:960px){
         height: 100%;
-        margin-left: 5rem;
+        margin-left: 2rem;
         max-width: 620px;
         padding: 2rem 0;
         visibility: visible;
@@ -85,6 +93,11 @@
         display: inline-block;
         margin: 0 .3rem;
       }
+    }
+    & .head-contact {
+      color: $dark;
+      font-style: normal;
+      text-transform: uppercase;
     }
   }
 }

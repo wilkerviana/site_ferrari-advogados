@@ -34,7 +34,7 @@
     right: -12%;
   }
   & span {
-    font-family: 'Lato',sans-serif;
+    font-family: 'BookmanBold',sans-serif;
     font-size: .8rem;
     font-weight: lighter;
     text-transform: uppercase;
@@ -84,6 +84,7 @@
     text-align: left;
     vertical-align: top;
     & picture {
+      cursor: pointer;
       display: block;
       position: relative;
       &:after {
@@ -97,13 +98,8 @@
         height: 99%;
         width: 100%;
       }
-      &:hover {
-        cursor: pointer;
-        &:after {
-          opacity: 0;
-        }
-      }
     }
+    
     & span {
       font-family: 'BookmanBold',sans-serif;
       font-size: .825em;
@@ -128,13 +124,18 @@
         text-decoration: none;
       }
     }
-    & picture:hover ~ span {
-      color: $light-wine;
-    }
-    & picture:hover ~ .description {
-      max-height: 8rem;
-      opacity: 1;
-      visibility: visible;
+    &:hover {
+      & picture:after {
+        opacity: 0;
+      }
+      & span {
+        color: $light-wine;
+      }
+      & .description {
+        max-height: 8rem;
+        opacity: 1;
+        visibility: visible;
+      }
     }
   }
   & .link-module {
@@ -166,10 +167,6 @@
   margin: 2rem 0;
   padding: 0 2rem;
   width: 100%;
-  @media (min-width:960px){
-    float: left;
-    width: 50%;
-  }
 }
 
 .newsletter {
@@ -284,6 +281,7 @@
       border: none;
       resize: none;
       height: 200px;
+      padding: 1rem;
       width: 100%;
       @media (min-width:960px){
         max-width: 640px;
@@ -308,6 +306,7 @@
 }
 
 .inside-main-img {
+  box-shadow: 0 .6em 1em #ccc;
   margin-top: 1rem;
   width: 100%;
 }

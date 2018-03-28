@@ -55,7 +55,12 @@
   min-height: 400px;
   padding: 1rem 0;
   &.slider-main {
-    background: url(../images/slider-main.jpg) no-repeat;
+    background: url(../images/fotos/carrossel-2.jpg) no-repeat;
+    background-position: center;
+    &:nth-child(3) {
+      background: url(../images/fotos/carrossel-1.jpg) no-repeat;
+      background-position: center;
+    }
   }
   & .wrapper-slider {
     margin: 0 auto;
@@ -71,12 +76,14 @@
     }
     & .description-slider {
       margin: 1rem 0 1.4rem;
+      max-width: 350px;
     }
     & .btn {
       background: $gray;
       padding: .7rem 1.2rem;
       & a {
         color: $dark;
+        font-family: 'BookmanRegular';
         font-size: .8rem;
         font-weight: lighter;
         text-decoration: none;
