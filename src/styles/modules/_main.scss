@@ -1,6 +1,3 @@
-.foo-main {
-  margin: 2rem auto;
-}
 .title-main {
   color: $light-wine;
   font-family: 'BookmanBold',serif;
@@ -107,15 +104,17 @@
     & .description {
       @media (min-width: 960px) {
         max-height: 0;
-        opacity: 0;
-        transition: max-height .4s ease-in;
-        transition: opacity .7s ease-in-out;
-        transition-delay: .3s;
-        visibility: hidden;
+        transition: max-height .4s linear;
       }
       & p , & a {
-        margin: .7em 0;
         max-width: 190px;
+        @media (min-width: 960px) {
+          opacity: 0;
+          transition: opacity .7s ease-in-out;
+          transition-delay: .3s;
+          visibility: hidden;
+          margin: .7em 0;
+        }
       }
       & a {
         color: $light-wine;
@@ -133,8 +132,10 @@
       }
       & .description {
         max-height: 8rem;
-        opacity: 1;
-        visibility: visible;
+        & p , & a{
+          opacity: 1;
+          visibility: visible;
+        }
       }
     }
   }
@@ -210,9 +211,10 @@
       display: inline-block;
       margin: 1rem 0;
       position: relative;
-      width: 260px;
+      width: 100%;
       @media (min-width:960px){
         margin: 0 1rem;
+        width: 260px;
       }
       & input {
         border-radius: 5px;

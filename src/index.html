@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
   <link rel="stylesheet" href="css/style.css" type="text/css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <title>Ferrari & Ferrari Advogados | Advocacia contenciosa e consultiva</title>
 </head>
 <body>
@@ -22,12 +24,13 @@
             <li class="option"><a href="index.php" class="link-menu" title="Home">Home</a></li>
             <li class="option"><a href="historia.php" class="link-menu" title="História">História</a></li>
             <li class="option"><a href="equipe.php" class="link-menu" title="Equipe">Equipe</a></li>
-            <li class="option"><a href="atuacao.php" class="link-menu" title="Área de Atuação">Área de Atuação</a></li>
+            <li class="option"><a href="atuacao.php" class="link-menu" title="Área de Atuação">Áreas de Atuação</a></li>
             <li class="option"><a href="#contato" class="link-menu" title="Contato">Contato</a></li>
           </ul>
         </nav>
-        
-        <button class="btn-menu-mobile">MENU</button>
+        <div id="btn-menu">
+          <button class="btn-menu-mobile"></button>
+        </div>
         <ul class="menu-social">
           <li class="option"><a href="https://www.facebook.com/Ferrari-e-Ferrari-Advogados-525281990830750/" class="link-social" target="_blank" title="Facebook">
             <img src="images/icons/social-facebook.png" alt="Logo Facebook">
@@ -35,35 +38,38 @@
           <li class="option"><a href="https://www.linkedin.com/company/28588454/" class="link-social" target="_blank" title="Linkedin">
             <img src="images/icons/social-linkedin.png" alt="Logo Linkedin">
           </a></li>
+          <li class="option"><a href="https://www.instagram.com/ferrarieferrariadvogados/" class="link-social" target="_blank" title="Linkedin">
+            <img src="images/icons/social-instagram.png" alt="Logo Instagram">
+          </a></li>
         </ul>
         <address class="head-contact">Tel. (11) 2362-2773</address>
       </header>
     </div>
   </div>
-  <div class="foo-slider">
-    <div class="carousel">
-      <div class="slider slider-main">
-        <div class="wrapper-slider">
-          <div class="content">
-            <h1 class="title-slider">Excelência</h1>
-            <p class="description-slider">Com visão clara, o escritório compromete-se com a qualidade e melhores resultados para o cliente.</p>
-            <button class="btn"><a href="#" title="Saiba Mais">Saiba Mais</a></button>
+  <main id="main-wrapper" class="foo-main">
+    <div class="foo-slider">
+      <div class="carousel">
+        <div class="slider slider-main">
+          <div class="wrapper-slider">
+            <div class="content">
+              <h1 class="title-slider">Excelência</h1>
+              <p class="description-slider">Com visão clara, o escritório compromete-se com a qualidade e melhores resultados para o cliente.</p>
+              <button class="btn"><a href="atuacao.php" title="Saiba Mais">Saiba Mais</a></button>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="slider slider-main">
-        <div class="wrapper-slider">
-          <div class="content">
-            <h1 class="title-slider">O Escritório</h1>
-            <p class="description-slider">
-                Fundado em 2006, com o objetivo de oferecer prestação de serviços advocatícios nos variados ramos do Direito.</p>
-            <button class="btn"><a href="#" title="Saiba Mais">Saiba Mais</a></button>
+        <div class="slider slider-main">
+          <div class="wrapper-slider">
+            <div class="content">
+              <h1 class="title-slider">O Escritório</h1>
+              <p class="description-slider">
+                  Fundado em 2006, com o objetivo de oferecer prestação de serviços advocatícios nos variados ramos do Direito.</p>
+              <button class="btn"><a href="historia.php" title="Saiba Mais">Saiba Mais</a></button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <main id="main-wrapper" class="foo-main">
     <div class="container">
       <h1 class="title-main">
         Ferrari & Ferrari Advogados
@@ -100,7 +106,7 @@
           <picture>
             <img src="images/fotos/equipe-rita.jpg" alt="Foto de Rita de Cássio Ribeiro">
           </picture>
-          <span>Rita de Cássia Ribeiro<br/>Dell'Aringa</span>
+          <span>Rita de Cassia Ribeiro<br/>Dell'Aringa</span>
           <div class="description">
             <p>Advogada, inscrita na Ordem dos Advogados do Brasil/SP sob n. 318.163; </p>
             <a href="equipe.php#rita" title="Saiba mais">Saiba mais >></a>
@@ -155,22 +161,17 @@
           <span class="title">Cadastre-se para receber nossos e-mkt:</span>
           <form action="newsletter.php" method="POST">
             <fieldset>
-              <input class="input-newsletter" name="nome" type="text" required>
-              <label class="label-newsletter" for="nome">Nome Completo</label>
+              <input class="input-newsletter" name="nomeNewsletter" type="text" required>
+              <label class="label-newsletter" for="nomeNewsletter">Nome Completo</label>
             </fieldset>
             <fieldset>
-              <input class="input-newsletter" name="email" type="email" required>
-              <label class="label-newsletter" for="email">E-mail</label>
+              <input class="input-newsletter" name="emailNewsletter" type="email" required>
+              <label class="label-newsletter" for="emailNewsletter">E-mail</label>
             </fieldset>
-            <button class="btn" type="submit">Enviar</button>
+            <button class="btn" type="submit" name="registerNewsletter">Enviar</button>
           </form>
         </div>
       </section>
-      <!-- <section class="module blog">
-        <h2 class="title">
-          Blog
-        </h2>
-      </section> -->
       <section id="contato" class="module contact">
         <h2 class="title">
           Contato
@@ -189,7 +190,6 @@
             <label for="mensagem">Mensagem:</label>
             <textarea name="mensagem" required></textarea>
           </fieldset>
-          <!-- <button class="btn" type="button">Cancelar</button> -->
           <button class="btn btn-submit" name="send" type="submit">Enviar Mensagem</button>
         </form>
       </section>
@@ -198,7 +198,7 @@
   <footer>
     <div class="container">
       <div class="social">
-        <h4 class="title">siga <br> <span>@ferrari&ferrari</span></h4>
+        <h4 class="title">siga <br> <span>ferrari&ferrari</span></h4>
         <ul class="menu-footer">
           <li class="option">&rarr;<a class="link-menu" href="https://www.instagram.com/ferrarieferrariadvogados/" target="_blank">no instagram</a></li>
           <li class="option">&rarr;<a class="link-menu" href="https://www.facebook.com/Ferrari-e-Ferrari-Advogados-525281990830750/" target="_blank">no facebook</a></li>
@@ -223,7 +223,7 @@
             </span>
           </li>
           <li class="option">
-            <a class="link-sitemap" href="atuacao.php">Área de Atuação</a>
+            <a class="link-sitemap" href="atuacao.php">Áreas de Atuação</a>
             <span class="details-sitemap">
               Seja em serviços de consultoria ou contencioso, o escritório Ferrari & Ferrari Advogados…
             </span>

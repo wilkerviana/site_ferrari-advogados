@@ -1,16 +1,34 @@
+@keyframes headerFixed {
+  from {
+    top: -200px;
+  }
+  to {
+    top: 0;
+  }
+}
+
 .foo-header{
   background: $light;
+  transition: all .4s linear;
   &.is-fixed{
     @media (min-width:960px) {
       box-shadow: 0 1px 10px 1px #ccc;
       position: fixed;
-      top: 0;
       width: 100%;
       z-index: 3;
+      animation: headerFixed .9s ease-in-out;
+      -webkit-animation: headerFixed .9s ease-in-out;
+      -moz-animation: headerFixed .9s ease-in-out;
+      -ms-animation: headerFixed .9s ease-in-out;
     }
   }
+  & #main-wrapper{
+    transition: padding 5s ease-in;
+  }
   &.is-fixed ~ #main-wrapper{
-    padding-top: 180px;
+    @media (min-width:960px){
+      padding-top: 300px;
+    }
   }
   & .container header{
     padding: .2rem 0;
@@ -29,16 +47,23 @@
       }
     }
     & .navegation-menu {
-      height: 0;
+      max-height: 0;
+      transition: max-height .4s ease-in;
       position: relative;
       visibility: hidden;
       width: 100%;
+      @media (min-width:960px){
+        max-height: 100%;
+      }
       &.menu-open{
-        height: 100%;
+        max-height: 10rem;
         padding: 1rem 0;
         visibility: visible;
         & ul .option{
           opacity: 1;
+          transition: opacity .4s ease-in;
+          transition-delay: .5s;
+          text-align: center;
         }
       }
       @media (min-width:960px){
@@ -84,8 +109,8 @@
     }
     & .menu-social {
       margin: 0 auto;
-      max-width: 200px;
-      padding: 2rem 3rem;
+      max-width: 160px;
+      padding: 2rem;
       @media (min-width:960px){
         margin: 0;
       }
@@ -98,18 +123,43 @@
       color: $dark;
       font-style: normal;
       text-transform: uppercase;
+      text-align: center;
     }
   }
 }
-.btn-menu-mobile{
-  background: none;
-  color: $light-wine;
-  display: block;
-  font-size: 1em;
-  font-weight: bold;
+#btn-menu {
+  background: $light-wine;
+  border-radius: 2rem;
   margin: 0 auto;
-  outline: none;
-  width: 100px;
+  position: relative;
+  height: 40px;
+  width: 40px;
+  .btn-menu-mobile{
+    background: $light;
+    outline: none;
+    position: absolute;
+    top: 1.125rem;
+    left: calc(50% - 24px/2);
+    height: 3px;
+    width: 24px;
+    &.active {
+      background: rgba(255,255,255,0);
+    }
+    &:before , &:after {
+      background: $light;
+      content: '';
+      position: absolute;
+      left: 0;
+      height: 3px;
+      width: 24px;
+      transition: top .5s;
+      transition: transform .5s;
+    }
+    &:before{top: -8px;}
+    &:after{top: 8px;}
+    &.active:before{transform: rotate(45deg);top: 0;}
+    &.active:after{transform: rotate(135deg);top: 0;}
+  }
   @media (min-width:960px) {
     display: none;
   }

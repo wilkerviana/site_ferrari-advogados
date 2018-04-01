@@ -52,8 +52,9 @@
   }
 }
 .carousel .slider{
-  min-height: 400px;
+  min-height: 420px;
   padding: 1rem 0;
+  
   &.slider-main {
     background: url(../images/fotos/carrossel-2.jpg) no-repeat;
     background-position: center;
@@ -64,6 +65,7 @@
   }
   & .wrapper-slider {
     margin: 0 auto;
+    min-height: 300px;
     max-width: 980px;
     width: 90%;
     & .content {
