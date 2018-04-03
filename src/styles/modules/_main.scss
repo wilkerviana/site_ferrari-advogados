@@ -234,7 +234,7 @@
 }
 
 .contact {
-  margin: 0 auto;
+  margin: 2rem auto;
   text-align: center;
   max-width: 90%;
   @media (min-width:960px){
@@ -306,9 +306,17 @@
     }
   }
 }
-
 .inside-main-img {
   box-shadow: 0 .6em 1em #ccc;
   margin-top: 1rem;
   width: 100%;
+}
+.blog {
+  & .subtitle{
+    color: $light-wine;
+    font-family: 'BookmanBold',serif;
+    font-size: 1.8em;
+    margin-bottom: 1em;
+    text-align: center;
+  }
 }

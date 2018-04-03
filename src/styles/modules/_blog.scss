@@ -1,0 +1,44 @@
+.blog {
+  padding: 2rem 0;
+  & .post-blog {
+    float: left;
+    padding: 2rem;
+    position: relative;
+    & h2 {
+      font-family: 'BookmanBold',sans-serif;
+    }
+    & p {
+      max-width: 450px;
+      margin: 1em 0;
+      text-align: justify;
+    }
+    & img {
+      display: none;
+      margin-bottom: 1em;
+    }
+    & a {
+      color: $dark;
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      text-decoration: none;
+      &:hover {
+        color: $light-wine;
+      }
+    }
+  }
+}
+.blog .post-blog:nth-child(2){
+  @media (min-width:960px){
+    float: left;
+    width: 50%;
+    & img {
+      display: block;
+    }
+  }
+}
+.blog:after {
+  content: '';
+  clear: both;
+  display: block;
+}

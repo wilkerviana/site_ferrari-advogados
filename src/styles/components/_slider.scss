@@ -53,14 +53,17 @@
 }
 .carousel .slider{
   min-height: 420px;
+  max-height: 600px;
   padding: 1rem 0;
   
   &.slider-main {
     background: url(../images/fotos/carrossel-2.jpg) no-repeat;
     background-position: center;
+    background-size: cover;
     &:nth-child(3) {
       background: url(../images/fotos/carrossel-1.jpg) no-repeat;
       background-position: center;
+      background-size: cover;
     }
   }
   & .wrapper-slider {

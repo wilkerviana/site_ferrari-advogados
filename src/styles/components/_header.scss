@@ -10,6 +10,10 @@
 .foo-header{
   background: $light;
   transition: all .4s linear;
+  padding: 1rem 0;
+  @media (min-width:960px) {
+    padding: 0;
+  }
   &.is-fixed{
     @media (min-width:960px) {
       box-shadow: 0 1px 10px 1px #ccc;
@@ -25,40 +29,45 @@
   & #main-wrapper{
     transition: padding 5s ease-in;
   }
-  &.is-fixed ~ #main-wrapper{
-    @media (min-width:960px){
-      padding-top: 300px;
-    }
-  }
   & .container header{
     padding: .2rem 0;
+    display: flex;
     @media (min-width:960px) {
-      display: flex;
       align-items: center;
     }
     & .brand {
       margin: 0 auto 1rem;
-      width: 157px;
+      width: 94px;
       & img {
         max-height: 82px;
+        width: 94px;
       }
       @media (min-width:960px){
         margin: 0;
+        width: 157px;
+        & img {
+          width: 100%;
+        }
       }
     }
     & .navegation-menu {
       max-height: 0;
       transition: max-height .4s ease-in;
+      transition-delay: .3s;
       position: relative;
       visibility: hidden;
-      width: 100%;
+      width: 0;
       @media (min-width:960px){
         max-height: 100%;
+        width: 100%;
       }
       &.menu-open{
         max-height: 10rem;
+        margin: 2rem 0;
         padding: 1rem 0;
         visibility: visible;
+        width: 100%;
+        flex: 1;
         & ul .option{
           opacity: 1;
           transition: opacity .4s ease-in;
@@ -74,7 +83,7 @@
         visibility: visible;
       }
       & .menu {
-        max-width: 560px;
+        max-width: 600px;
         @media (min-width:960px){
           float: right;
         }
@@ -110,9 +119,10 @@
     & .menu-social {
       margin: 0 auto;
       max-width: 160px;
-      padding: 2rem;
+      padding: .6em 0;
       @media (min-width:960px){
         margin: 0;
+        padding: 2rem;
       }
       & li{
         display: inline-block;
@@ -121,9 +131,13 @@
     }
     & .head-contact {
       color: $dark;
+      display: none;
       font-style: normal;
       text-transform: uppercase;
       text-align: center;
+      @media (min-width:960px){
+        display: initial;
+      }
     }
   }
 }
@@ -134,6 +148,7 @@
   position: relative;
   height: 40px;
   width: 40px;
+  flex: 0 0 auto;
   .btn-menu-mobile{
     background: $light;
     outline: none;
@@ -163,4 +178,14 @@
   @media (min-width:960px) {
     display: none;
   }
+}
+.navegation-menu.menu-open + #btn-menu {
+  position: absolute;
+  left: 45%;
+}
+.anchor {
+  display: block;
+  height: 120px;
+  margin-top: -120px;
+  visibility: hidden;
 }
