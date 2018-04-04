@@ -1,5 +1,10 @@
 .blog {
   padding: 2rem 0;
+  & .post-date{
+    color: $dark-wine;
+    font-family: 'BookmanBold',sans-serif;
+    font-size: .625em;
+  }
   & .post-blog {
     float: left;
     padding: 2rem;
